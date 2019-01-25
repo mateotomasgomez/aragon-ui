@@ -27,6 +27,7 @@
     "release:minor": "npm version minor && git push && git push --tags && npm publish",
     "deploy:site": "cd gallery && npm run build && echo 'ui.aragon.org' > dist/CNAME && cp public/favicon.svg dist && gh-pages -d dist",
     "prepare": "npm run build",
+    "prepublishOnly": "npm run optimize:svg && npm run icons:build && npm run theme:build",
     "start": "cd gallery && npm start"
   },
   "peerDependencies": {
