@@ -66,7 +66,7 @@
     "opencolor-converter": "git://github.com/opencolor-tools/opencolor-converter.git#v2.1.23",
     "prettier": "^1.17.1",
     "react-media": "^1.6.1",
-    "rollup": "^0.67.1",
+    "rollup": "^0.67.2",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-filesize": "^5.0.1",
