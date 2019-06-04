@@ -7,7 +7,7 @@ import EditorTabView from './EditorTabView'
 
 let codemirrorInitialInstance = null
 
-const Editor = ({ content, onChange }) => {
+const MarkdownEditorWrapper = ({ content, onChange }) => {
   const [screenIndex, setScreenIndex] = useState(0)
 
   const [codemirrorInstance, setCodemirrorInstance] = useState(
@@ -45,7 +45,7 @@ const Editor = ({ content, onChange }) => {
           handleEditorChange={handleEditorChange}
           onCodeMirrorInit={onCodeMirrorInit}
           screenIndex={screenIndex}
-          unsavedText={content}
+          content={content}
           instance={codemirrorInstance}
         />
       </ContainerEditor>
@@ -53,9 +53,9 @@ const Editor = ({ content, onChange }) => {
   )
 }
 
-Editor.propTypes = {
+MarkdownEditorWrapper.propTypes = {
   content: PropTypes.string,
-  onChange: PropTypes.function,
+  onChange: PropTypes.func,
 }
 
 const Container = styled.div`
@@ -71,4 +71,4 @@ const ContainerEditor = styled.div`
   overflow-y: auto;
 `
 
-export default Editor
+export default MarkdownEditorWrapper

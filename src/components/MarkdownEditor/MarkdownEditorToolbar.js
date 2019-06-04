@@ -35,11 +35,10 @@ const MarkdownEditorToolbar = ({ setSelectionBold }) => {
 }
 
 MarkdownEditorToolbar.propTypes = {
-  setSelectionBold: PropTypes.function,
+  setSelectionBold: PropTypes.func,
 }
 
 const EditToolBar = styled.div`
-  background: #ccc;
   height: 30px;
 `
 
@@ -50,7 +49,6 @@ const EditToolBarButton = styled(Button)`
   text-align: center;
   padding: 0;
   margin: 0;
-  background: #ccc;
 `
 
 const EditToolBarSeparator = styled.div`

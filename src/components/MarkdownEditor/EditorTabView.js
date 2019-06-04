@@ -44,11 +44,19 @@ const EditorTabView = ({
 )
 
 EditorTabView.propTypes = {
-  handleEditorChange: PropTypes.function,
-  onCodeMirrorInit: PropTypes.function,
-  screenIndex: PropTypes.integer,
+  handleEditorChange: PropTypes.func,
+  onCodeMirrorInit: PropTypes.func,
+  screenIndex: PropTypes.number,
   content: PropTypes.string,
   instance: PropTypes.object,
+}
+
+EditorTabView.defaultProps = {
+  handleEditorChange: () => {},
+  onCodeMirrorInit: () => {},
+  screenIndex: 0,
+  content: '',
+  instance: null,
 }
 
 export default EditorTabView

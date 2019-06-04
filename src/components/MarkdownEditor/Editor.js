@@ -36,11 +36,13 @@ const Editor = ({ content, instance, onCodeMirrorInit, onChange }) => {
 Editor.propTypes = {
   content: PropTypes.string,
   instance: PropTypes.object,
-  onCodeMirrorInit: PropTypes.function,
-  onChange: PropTypes.function,
+  onCodeMirrorInit: PropTypes.func,
+  onChange: PropTypes.func,
 }
+
 Editor.defaultProps = {
   onCodeMirrorInit: () => {},
+  onChange: () => {},
 }
 
 export default Editor

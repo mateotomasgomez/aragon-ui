@@ -7,14 +7,14 @@ import MarkdownEditorWrapper from './MarkdownEditorWrapper'
 const Editor = ({ content, onChange }) => {
   return (
     <Container>
-      <MarkdownEditorWrapper content={content} onChange={onChange} />>
+      <MarkdownEditorWrapper content={content} onChange={onChange} />
     </Container>
   )
 }
 
 Editor.propTypes = {
   content: PropTypes.string,
-  onChange: PropTypes.function,
+  onChange: PropTypes.func,
 }
 
 const Container = styled.div`
