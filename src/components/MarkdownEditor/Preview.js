@@ -14,7 +14,7 @@ const Link = ({ children, ...props }) => (
   </SafeLink>
 )
 
-const ListItem = ({ checked, children, ...props }) => {
+const ListItem = ({ checked, children }) => {
   let checkbox = null
   if (checked !== null) {
     checkbox = <Checkbox checked={checked} />
@@ -26,6 +26,11 @@ const ListItem = ({ checked, children, ...props }) => {
     checkbox,
     children
   )
+}
+
+ListItem.propTypes = {
+  checked: PropTypes.boolean,
+  children: PropTypes.object,
 }
 
 const Preview = ({ content }) => {

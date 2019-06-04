@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import Editor from './Editor'
@@ -8,7 +8,7 @@ const EditorTabView = ({
   handleEditorChange,
   onCodeMirrorInit,
   screenIndex,
-  unsavedText,
+  content,
   instance,
 }) => (
   <div
@@ -32,16 +32,23 @@ const EditorTabView = ({
         {screenIndex === 0 && (
           <Editor
             instance={instance}
-            content={unsavedText}
+            content={content}
             onChange={handleEditorChange}
             onCodeMirrorInit={onCodeMirrorInit}
           />
         )}
-        {screenIndex === 1 && <Preview content={unsavedText} />}
-
+        {screenIndex === 1 && <Preview content={content} />}
       </div>
     </div>
   </div>
 )
+
+EditorTabView.propTypes = {
+  handleEditorChange: PropTypes.function,
+  onCodeMirrorInit: PropTypes.function,
+  screenIndex: PropTypes.integer,
+  content: PropTypes.string,
+  instance: PropTypes.object,
+}
 
 export default EditorTabView

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import MarkdownEditorToolbar from './MarkdownEditorToolbar'
-import Button from '../Button/Button'
 import TabBar from '../TabBar/TabBar'
 
 const EditorTabBar = ({ screenIndex, handleChange, setSelectionBold }) => (
@@ -30,5 +30,11 @@ const EditorTabBar = ({ screenIndex, handleChange, setSelectionBold }) => (
 const TabBarWrapper = styled.div`
   margin: 0 -30px 30px;
 `
+
+EditorTabBar.propTypes = {
+  screenIndex: PropTypes.integer,
+  handleChange: PropTypes.function,
+  setSelectionBold: PropTypes.function,
+}
 
 export default EditorTabBar

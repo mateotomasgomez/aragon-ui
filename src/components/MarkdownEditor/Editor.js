@@ -5,9 +5,6 @@ import 'codemirror/lib/codemirror.css'
 import 'codemirror/mode/gfm/gfm'
 import 'codemirror/theme/idea.css'
 import 'codemirror/mode/javascript/javascript'
-// ambiance ambiance-mobile elegant idea neat neo ttcn xq-light 3024-day
-
-// import dompurify from 'dompurify';
 
 const Editor = ({ content, instance, onCodeMirrorInit, onChange }) => {
   useEffect(() => {
@@ -15,27 +12,35 @@ const Editor = ({ content, instance, onCodeMirrorInit, onChange }) => {
   }, [instance])
 
   return (
-      <CodeMirror
-        value={content}
-        options={{
-          mode: 'gfm',
-          theme: 'idea',
-          lineWrapping: true,
-          autofocus: true,
-        }}
-        editorDidMount={editor => {
-          onCodeMirrorInit(editor)
-        }}
-        onBeforeChange={(editor, data, value) => {
-          onChange(value)
-        }}
-        onChange={(editor, data, value) => {
-          onChange(value)
-        }}
-      />
+    <CodeMirror
+      value={content}
+      options={{
+        mode: 'gfm',
+        theme: 'idea',
+        lineWrapping: true,
+        autofocus: true,
+      }}
+      editorDidMount={editor => {
+        onCodeMirrorInit(editor)
+      }}
+      onBeforeChange={(editor, data, value) => {
+        onChange(value)
+      }}
+      onChange={(editor, data, value) => {
+        onChange(value)
+      }}
+    />
   )
 }
 
-Editor.propTypes = {}
+Editor.propTypes = {
+  content: PropTypes.string,
+  instance: PropTypes.object,
+  onCodeMirrorInit: PropTypes.function,
+  onChange: PropTypes.function,
+}
+Editor.defaultProps = {
+  onCodeMirrorInit: () => {},
+}
 
 export default Editor

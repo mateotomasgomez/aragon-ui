@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Button from '../Button/Button'
 import Add from '../../icons/components/Add'
@@ -31,6 +32,10 @@ const MarkdownEditorToolbar = ({ setSelectionBold }) => {
       <EditToolBarSeparator />
     </EditToolBar>
   )
+}
+
+MarkdownEditorToolbar.propTypes = {
+  setSelectionBold: PropTypes.function,
 }
 
 const EditToolBar = styled.div`

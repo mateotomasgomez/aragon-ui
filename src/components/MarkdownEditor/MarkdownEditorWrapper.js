@@ -1,22 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import EditorTabBar from './EditorTabBar'
 import EditorTabView from './EditorTabView'
-/*
-import 'codemirror/lib/codemirror.css'
-import 'codemirror/mode/gfm/gfm'
-import 'codemirror/theme/idea.css'
-import 'codemirror/mode/javascript/javascript'
-*/
-let codemirrorInitialInstance = null
-let editorTypeInitial = 0
 
-// import dompurify from 'dompurify';
+let codemirrorInitialInstance = null
+
 const Editor = ({ content, onChange }) => {
   const [screenIndex, setScreenIndex] = useState(0)
-  const [editorType, setEditorType] = useState(editorTypeInitial)
 
   const [codemirrorInstance, setCodemirrorInstance] = useState(
     codemirrorInitialInstance
